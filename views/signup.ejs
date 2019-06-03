@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <h1 id="title">Signup</h1>
+      <button type="button" name="back" onclick="location.href = '/'">Back</button>
+      <form class="signup-form" action="/" method="post">
+        <!-- Username -->
+        <input type="text" name="username" placeholder="Username" required><br>
+        <!-- Email -->
+        <input type="text" name="email" placeholder="Email" required><br>
+        <!-- Password -->
+        <input type="password" name="password" placeholder="Password" required><br>
+        <input type="password" name="repeat-password" placeholder="Repeat Password" required><br>
+        <!-- Student or Teacher buttons -->
+        <label><input type="radio" name="accounttype" value="student" class="button" required>Student</label>
+        <label><input type="radio" name="accounttype" value="teacher" class="button" id="teacher-button">Teacher</label><br>
+
+        <!-- Teacher-specific fields -->
+        <div id="teacher-fields">
+          <!-- Phone -->
+          <br><input type="text" name="phone" placeholder="Phone (123-456-7890)" required><br>
+          <!-- Profile Picture -->
+          <!-- <span>Profile Picture:</span><br><input type="file" name="" value=""><br> -->
+          <!-- Subjects -->
+          <span>Subjects:</span><br>
+          <label><input type="checkbox" name="subjects[]" value="math">Math</label><br>
+          <label><input type="checkbox" name="subjects[]" value="science">Science</label><br>
+          <label><input type="checkbox" name="subjects[]" value="english">English</label><br>
+          <label><input type="checkbox" name="subjects[]" value="comp-sci">Computer Science</label><br>
+          <!-- Availability Table -->
+          <span>Availability:</span>
+          <table>
+            <!-- Array with all available days to select from -->
+            <% var days = ['Monday','Tuesday','Wednesday','Thursday','Friday']; %>
+            <tr>
+              <!-- Create a heading with each day -->
+              <% for (var i = 0; i < days.length; i++) { %>
+                <th><%= days[i] %></th>
+              <% } %>
+            </tr>
+            <tr>
+              <!-- Lunch checkboxes to be stored in array `lunch[]` -->
+              <% for (var i = 0; i < days.length; i++) { %>
+                <td>Lunch: <input type="checkbox" name="lunch[]" value="<%= i %>"></td>
+              <% } %>
+            </tr>
+            <tr>
+              <!-- Afterschool checkboxes stored in `afterSchool[]` -->
+              <% for (var i = 0; i < days.length; i++) { %>
+                <td>After-school: <input type="checkbox" name="afterSchool[]" value="<%= i %>"></td>
+              <% } %>
+            </tr>
+          </table>
+        </div>
+
+        <br><input type="submit" name="submit" value="Login">
+      </form>
+    </div>
+    <script src="javascripts/signup.js" charset="utf-8"></script>
+  </body>
+</html>
