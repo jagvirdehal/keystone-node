@@ -19,11 +19,16 @@ const con = mysql.createConnection({
 });
 
 // Establish connection
-// con.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Connected to MySQL");
-//
-// });
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected to MySQL");
+    var createTeachers = "CREATE TABLE teachers (id INT AUTO_INCREMENT PRIMARY KEY, username varchar(255), email varchar(255), name varchar(255), password varchar(255), phone varchar(255), subjects varchar(255), availability varchar(255))";
+    var createStudents = "CREATE TABLE students (id INT AUTO_INCREMENT PRIMARY KEY, username varchar(255), email varchar(255), name varchar(255), password varchar(255))"
+    con.query("SELECT * FROM students", function(err, result) {
+        if (err) throw err;
+        console.log(result);
+    });
+});
 
 // Express module setup
 app.use(express.static(path.join(__dirname, 'public')));
@@ -92,9 +97,16 @@ app.post('/', function(req,res) {
     console.log("Connected!");
     var studentVerify = "SELECT * FROM students WHERE username = '" + username + "'";
     var teacherVerify = "SELECT * FROM teachers WHERE username = '" + username + "'";
+
+    var studentUpload = "";
+    var teacherUpload = "";
+
     con.query(studentVerify, function (err,result) {
       if (err) throw err;
       console.log(result);
+      if (result == []) {
+          con.query()
+      }
     });
     con.query(teacherVerify, function (err,result) {
       if (err) throw err;
