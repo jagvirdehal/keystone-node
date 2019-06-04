@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Signup</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/signup.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
   </head>
   <body>
     <div class="app">
       <h1 id="title">Signup</h1>
       <button type="button" name="back" onclick="location.href = '/'">Back</button>
-      <form class="signup-form" action="/" method="post">
+      <form class="signup-form" action="/signup" method="post">
         <!-- Username -->
         <input type="text" name="username" placeholder="Username" required><br>
         <!-- Email -->
@@ -62,9 +62,16 @@
           </table>
         </div>
 
-        <br><input type="submit" name="submit" value="Login">
+        <br><input type="submit" name="submit" value="Signup">
       </form>
     </div>
     <script src="javascripts/signup.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    <% var fail; %>
+    teacherCheck();
+    if (<%= fail %>) {
+        alert("Username taken. Please try a different username.")
+    }
+    </script>
   </body>
 </html>

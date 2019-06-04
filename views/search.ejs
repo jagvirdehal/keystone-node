@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<body>
+<style>
+* {
+  font-family: arial;
+}
+
+.dropbtn {
+  background-color: #000000;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #ffffff;
+  border: 1px solid black;
+  color: black;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+table {
+  position: relative;
+  left: 100px;
+}
+
+.lunch {
+  position: fixed;
+  left: 30px;
+}
+
+input {
+  position: relative;
+  left: 50px;
+  width: 65px;
+}
+
+.school {
+  position: relative;
+  left: 20px;
+}
+
+.box {
+  position: relative;
+  left: 12px;
+}
+
+.filter {
+  position: relative;
+  top: 30px;
+  background-color: #000000;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.filter:hover, .filter:focus {
+  background-color: #ffffff;
+  border: 1px solid black;
+  color: black;
+}
+</style>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+<button type="button" name="button" onclick="location.href = '/logout'">Logout</button>
+
+<h1>Choose to Filter</h1>
+<p>Click on the button to choose your subjects</p>
+
+<form class="" action="/results" method="post">
+    <select class="" name="subjects">
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+        <option value="english">English</option>
+        <option value="comp-sci">Comp-sci</option>
+    </select>
+    <table>
+      <tr>
+          <th></th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+      </tr>
+      <tr class="lunch">
+        <td>Lunch</td>
+        <td><input type="checkbox" name="lunch[]" value="0"></td>
+        <td><input type="checkbox" name="lunch[]" value="1"></td>
+        <td><input type="checkbox" name="lunch[]" value="2"></td>
+        <td><input type="checkbox" name="lunch[]" value="3"></td>
+        <td><input type="checkbox" name="lunch[]" value="4"></td>
+      </tr>
+    </table><br><br>
+    <table class="school">
+      <tr>
+        <td>After school</td>
+        <td><input type="checkbox" name="afterSchool[]" value="0" class="box"></td>
+        <td><input type="checkbox" name="afterSchool[]" value="1" class="box"></td>
+        <td><input type="checkbox" name="afterSchool[]" value="2" class="box"></td>
+        <td><input type="checkbox" name="afterSchool[]" value="3" class="box"></td>
+        <td><input type="checkbox" name="afterSchool[]" value="4" class="box"></td>
+      </tr>
+    </table>
+    <input type="submit" name="" value="Search">
+</form>
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">subjects</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Math</a>
+    <a href="#about">Science</a>
+    <a href="#contact">English</a>
+    <a href="#contact">Comp Sci</a>
+  </div>
+</div>
+
+<p>Choose when you're available during the week</p>
+
+<button class="filter">Filter</button>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>

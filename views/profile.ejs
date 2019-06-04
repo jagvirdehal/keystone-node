@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%= data.name %> - Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+        <button type="button" name="button" onclick="location.href = '/logout'">Logout</button>
+        <button id="back-btn" type="button" name="button" onclick="location.href = '/search'" style="display: none;">Back</button>
+      <h1 id="title"><%= data.name %>'s Profile</h1>
+
+      <h4>Contact info:</h4>
+      <h5>Email: <%= data.email %></h5>
+      <h5>Phone: <%= data.phone %></h5>
+
+      <h4>Subjects:</h4>
+      <% data.subjects = JSON.parse(data.subjects); %>
+      <% for (var i = 0; i < data.subjects.length; i++) { %>
+          <span><%= data.subjects[i] %></span>
+      <% } %>
+
+      <h4>Availability:</h4>
+      <table>
+          <tr>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+          </tr>
+          <% data.availability = JSON.parse(data.availability); %>
+          <tr>
+              <% for (var i = 0; i < 5; i++) { %>
+                  <td> <% if (data.availability[i].includes('l')) { %> Lunch <% } %> </td>
+              <% } %>
+          </tr>
+          <tr>
+              <% for (var i = 0; i < 5; i++) { %>
+                  <td> <% if (data.availability[i].includes('a')) { %> After school <% } %> </td>
+              <% } %>
+          </tr>
+      </table>
+      <h4>Current Students:</h4>
+    </div>
+    <script src="javascripts/profile.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        if (<%= student %>) {
+            $('#back-btn').show();
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%= name %> - Home</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+        <button type="button" name="button" onclick="location.href = '/logout'">Logout</button>
+        <h1 id="title"><%= name %>'s Home</h1>
+        <button type="button" name="button" onclick="location.href = '/search'">Find a Tutor</button>
+        <button type="button" name="button" onclick="location.href = '/selfhelp'">Self Help</button>
+    </div>
+    <script src="javascripts/home.js" charset="utf-8"></script>
+  </body>
+</html>

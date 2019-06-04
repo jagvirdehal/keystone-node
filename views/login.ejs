@@ -9,11 +9,18 @@
     <div class="app">
       <h1>Login</h1>
       <button type="button" name="back" onclick="location.href = '/'">Back</button>
-      <form class="loginform" action="index.html" method="post">
-        <input type="text" name="username" placeholder="Username/Email"><br>
+      <form class="loginform" action="/login" method="post">
+        <input type="text" name="username" placeholder="Username"><br>
         <input type="password" name="password" placeholder="Password"><br>
         <input type="submit" name="submit" value="Login">
       </form>
     </div>
+    <script src="javascripts/login.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    <% var fail; %>
+    if (<%= fail %>) {
+        alert("Login failed. Try again")
+    }
+    </script>
   </body>
 </html>
