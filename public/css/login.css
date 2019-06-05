@@ -1,0 +1,112 @@
+@font-face { font-family: bebas; src: url("BEBAS.ttf"); }
+
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 300%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    background: url("https://image.freepik.com/free-vector/vector-polka-background-with-small-dots_1017-13972.jpg");
+    background-repeat: repeat;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+h1 {
+    font-family: 'Staatliches', sans-serif;
+    margin: auto;
+    font-size: 50px;
+    color: black;
+    position: relative;
+    padding: 90px;
+    padding-bottom: 45px;
+    text-align: center;
+}
+
+.app {
+  text-align: center;
+  background-color: white;
+  border: 5px white dashed;
+  border-radius: 5px;
+  height: 550px;
+  margin: 55px 600px -500px 600px;
+  z-index: 1;
+}
+
+button {
+  cursor: pointer;
+  margin: 0 0 35px 0;
+  background: white;
+  border: 2px black solid;
+  border-bottom: 5px black solid;
+  width: 50px;
+  color: black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 2px;
+  transition: background 0.5s
+}
+
+button:hover, button:focus {
+  cursor: pointer;
+  outline: none;
+  margin: 0 0 35px 0;
+  background: black;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.button {
+  cursor: pointer;
+  margin: 35px 0 0 0;
+  background: white;
+  border: 2px black solid;
+  border-bottom: 5px black solid;
+  color: black;
+  width: 150px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 30px;
+  border-radius: 2px;
+  padding: 10px;
+  transition: background 0.5s
+}
+
+.button:hover, .button:focus {
+  outline: none;
+  cursor: pointer;
+  margin: 35px 0 0 0;
+  background: black;
+  color: white;
+  width: 150px;
+  border-radius: 2px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.txt {
+  width: 100px;
+  margin: 0 0 10px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1.5px solid black;
+  transition: 0.4s;
+}
+
+.txt:focus {
+  outline: none;
+  width: 250px;
+}

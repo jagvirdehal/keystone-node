@@ -1,0 +1,55 @@
+body {
+    background-image: url("https://image.freepik.com/free-vector/vector-polka-background-with-small-dots_1017-13972.jpg");
+    background-repeat: repeat;
+}
+
+h1 {
+    font-family: 'Staatliches', sans-serif;
+    margin: auto;
+    font-size: 50px;
+    color: white;
+    position: relative;
+    padding: 90px;
+    padding-bottom: 45px;
+    text-align: center;
+}
+
+.app {
+    background-color: black;
+    border-radius: 5px;
+    height: 550px;
+    width: 600px;
+    margin: 5% auto;
+    z-index: 1;
+    box-shadow: 0 5px 25px
+}
+
+.button {
+    text-align: center;
+    padding: 15px;
+}
+
+.login, .signup {
+    background: black;
+    border: 2px white solid;
+    border-bottom: 5px white solid;
+    border-radius: 2px;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 24px;
+    transition: background 0.5s;
+}
+
+.login {
+    margin: 0 0 35px 0;
+    padding: 15px 24px;
+}
+
+.login:hover, .login:focus, .signup:hover, .signup:focus {
+    background: white;
+    color: black;
+}
+
+.signup {
+    padding: 15px;
+}

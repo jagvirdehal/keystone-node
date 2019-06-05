@@ -41,6 +41,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
 // Renders `index.ejs` at the `/` directory
+// If logged in as student, show home.ejs, if teacher, show profile.ejs, if not logged in, show index.ejs
 app.get('/', function(req, res) {
     var getData = `SELECT * FROM ${localStorage.getItem("type")}s WHERE username = '${localStorage.getItem("username")}'`
     if (localStorage.getItem("type") == "student") {
