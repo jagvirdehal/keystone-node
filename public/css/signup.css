@@ -1,0 +1,73 @@
+* {
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+body {
+  background: url("https://www.xmple.com/wallpaper/black-white-lines-streaks-stripes-1920x1080-c2-ffffff-000000-l2-42-59-a-45-f-1.svg");
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 60px;
+  margin: 20px 0 15px 0;
+}
+
+.app {
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  height: 80%;
+  padding: 50px;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+}
+
+.app:hover, .app:focus {
+  filter: none;
+  -webkit-filter: none;
+}
+
+button, .button {
+  cursor: pointer;
+  margin: 5px 0 10px 0;
+  background: white;
+  border: 2px black solid;
+  border-bottom: 5px black solid;
+  width: 70px;
+  color: black;
+  font-size: 15px;
+  border-radius: 2px;
+  transition: background 0.5s
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+  cursor: pointer;
+  outline: none;
+  background: black;
+  color: white;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+.type {
+  width: 100px;
+  border: none;
+  text-align: center;
+  font-size: 10px;
+  border-bottom: 1.5px solid black;
+  transition: 0.4s;
+}
+
+.type:hover, .type:focus {
+  width: 150px;
+}
+

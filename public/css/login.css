@@ -36,7 +36,8 @@ h1 {
   border: 5px white dashed;
   border-radius: 5px;
   height: 550px;
-  margin: 55px 600px -500px 600px;
+  width: 600px;
+  margin: 55px auto -500px auto;
   z-index: 1;
 }
 
