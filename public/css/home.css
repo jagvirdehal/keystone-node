@@ -1,0 +1,57 @@
+* {
+  color: white;
+}
+
+body {
+  background-image: url("https://cdn.wallpapersafari.com/85/54/ahp9mz.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  border-radius: 5px;
+}
+
+li {
+  background-color: black;
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  font-family: 'Roboto Mono', sans-serif;
+  transition: 0.5s;
+}
+
+li:hover, li:focus {
+  background-color: #b68cff;
+}
+
+a {
+  text-decoration: none;
+  color: #b68cff;
+  transition: 0.5s;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 2em;
+  margin: -2em;
+}
+
+a:hover, a:focus {
+  color: white;
+}
+
+h1 {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 100px;
+  text-align: center;
+}
+
+.find, .help {
+    width:100px;
+    padding: 0px 20px;
+}

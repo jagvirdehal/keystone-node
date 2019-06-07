@@ -3,15 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title><%= name %> - Home</title>
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="css/home.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Staatliches|Roboto+Mono&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="app">
-        <button type="button" name="button" onclick="location.href = '/logout'">Logout</button>
+        <ul class="nav">
+          <!-- <li><img style="width:50px;" src="/imgs/Logo Comp Sci 1.png"></li> -->
+          <!--Make this button an a tag and just link to the login page-->
+          <li><a href="/logout">Logout</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Settings</a></li>
+        </ul><br>
         <h1 id="title"><%= name %>'s Home</h1>
-        <button type="button" name="button" onclick="location.href = '/search'">Find a Tutor</button>
-        <button type="button" name="button" onclick="location.href = '/selfhelp'">Self Help</button>
+        <center>
+        <img class="find" id="find" onclick="location.href = '/search'" src="/imgs/magnifying-glass.svg">
+        <img class="help" id="help" onclick="location.href = '/search'" src="/imgs/study.svg"></center>
     </div>
     <script src="javascripts/home.js" charset="utf-8"></script>
   </body>
